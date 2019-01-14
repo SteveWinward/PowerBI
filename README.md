@@ -14,4 +14,6 @@ Power BI training resources, presentations and downloads
 [Power BI Developer Scenarios](https://aka.ms/steve-pbi-dev)
 
 # Python Setup
-See the [PythonSetup.ps1](/Python/PythonSetup.ps1) file for install details
+First, check out the online docs for Power BI and Python integration [here](https://docs.microsoft.com/en-us/power-bi/desktop-python-scripts).
+
+Then, see the [PythonSetup.ps1](/Python/PythonSetup.ps1) file for specific Python module requirements.
