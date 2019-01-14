@@ -10,5 +10,8 @@ Power BI training resources, presentations and downloads
 
 [Power BI Training Content](https://aka.ms/PBITraining)
 
+# Presentations
+[Power BI Developer Scenarios](https://aka.ms/steve-pbi-dev)
+
 # Python Setup
 See the [PythonSetup.ps1](/Python/PythonSetup.ps1) file for install details
