@@ -1,8 +1,18 @@
-﻿# This script will create a subfolder 'downloads' in the current working directory
-# all downloads will be saved to this subfolder
+﻿# Created by Steve Winward
+#
+# This script will download all Power BI visuals from the marketplace and save them
+# to a downloads subfolder in the current working directory.
+# 
+# You can optionally specify the -CertifiedOnly switch to only download visuals
+# that have gone through the certification process.
+#
+param (
+    [switch]$CertifiedOnly = $false
+)
 
 $downloadFolder = Join-Path $PSScriptRoot 'downloads'
 
+# Create the downloads folder if it doesn't already exist
 if(-not (Test-Path $downloadFolder)){
     Write-Output "$downloadFolder does not exist"
     Write-Output "Creating $downloadFolder"
@@ -21,6 +31,15 @@ $results = $json.Values
 
 # loop over all results
 $results | foreach {
+    # if the CertifiedOnly switch was specified, skip any visuals that are not certified
+    if($CertifiedOnly){
+        $containsCertified = $_.Categories | where {$_.Id -eq 'Power BI Certified'}
+
+        if($containsCertified -eq $null){
+            return
+        }
+    }
+
     # Download the manifest xml file
     [xml]$xml = (New-Object System.Net.WebClient).DownloadString($_.ManifestUrl)
 
