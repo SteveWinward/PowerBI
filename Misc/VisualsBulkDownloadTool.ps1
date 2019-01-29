@@ -21,16 +21,13 @@ if(-not (Test-Path $downloadFolder)){
 }
 
 # Download the list of all Power BI Visuals from the search api
-$searchRequest = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=Any_PowerBI&top=500'
+$searchRequest = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=Any_PowerBI&top=1000'
 
-
-$json = Invoke-WebRequest $searchRequest |
-    ConvertFrom-Json 
-
-$results = $json.Values
+# Parse the request as JSON
+$json = Invoke-WebRequest $searchRequest | ConvertFrom-Json 
 
 # loop over all results
-$results | foreach {
+$json.Values | foreach {
     # if the CertifiedOnly switch was specified, skip any visuals that are not certified
     if($CertifiedOnly){
         $containsCertified = $_.Categories | where {$_.Id -eq 'Power BI Certified'}
@@ -49,6 +46,7 @@ $results | foreach {
     # parse the visual file name
     $visualName = $fileUrl.split('/')[-1]
 
+    # print the visual name
     $visualName
 
     # create the destination path
