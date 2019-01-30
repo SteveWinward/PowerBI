@@ -10,6 +10,7 @@ param (
     [switch]$CertifiedOnly = $false
 )
 
+# Create the downloads path as a subdirectory to the current working directory of the script
 $downloadFolder = Join-Path $PSScriptRoot 'downloads'
 
 # Create the downloads folder if it doesn't already exist
@@ -30,8 +31,10 @@ $json = Invoke-WebRequest $searchRequest | ConvertFrom-Json
 $json.Values | foreach {
     # if the CertifiedOnly switch was specified, skip any visuals that are not certified
     if($CertifiedOnly){
+        # Check the categories attributes to see if "Power BI Certified" exists
         $containsCertified = $_.Categories | where {$_.Id -eq 'Power BI Certified'}
 
+        # If it is not certified, skip this visual and go to the next one
         if($containsCertified -eq $null){
             return
         }
