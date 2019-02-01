@@ -20,9 +20,12 @@ Then, see the [PythonSetup.ps1](/Python/PythonSetup.ps1) file for specific Pytho
 
 # Power BI Report Server Demos
 ## D3.js Visual Demo
-Using the awesome [D3.js custom visual](https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381354?tab=Overview), I recreated the sample file to work with Power BI Report Server (August 2018). 
+Using the awesome [D3.js custom visual](https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381354?tab=Overview), I recreated the sample file to work with Power BI Report Server for various release versions. 
 
-You can download the sample file [here](/Misc/d3js_report_server_aug_2018.pbix).
+You can download the sample files below
+
+* [August, 2018](/Misc/d3js_report_server_aug_2018.pbix)
+* [January, 2019](/Misc/d3js_report_server_jan_2019.pbix)
 
 ## Visuals Marketplace Bulk Download
 I created a PowerShell script that allows you to download all Power BI visuals from the marketplace at one time.  The script can be found [here](/Misc/VisualsBulkDownloadTool.ps1)
