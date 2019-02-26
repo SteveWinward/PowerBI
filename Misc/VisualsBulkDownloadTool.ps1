@@ -6,8 +6,11 @@
 # You can optionally specify the -CertifiedOnly switch to only download visuals
 # that have gone through the certification process.
 #
+# You can optionally specifcy the -MicrosoftOnly switch to download visuals that
+# are created by Microsoft
 param (
-    [switch]$CertifiedOnly = $false
+    [switch]$CertifiedOnly = $false,
+    [switch]$MicrosoftOnly = $false
 )
 
 # Create the downloads path as a subdirectory to the current working directory of the script
@@ -42,6 +45,12 @@ $json.Values | foreach {
 
     # Download the manifest xml file
     [xml]$xml = (New-Object System.Net.WebClient).DownloadString($_.ManifestUrl)
+
+    if($MicrosoftOnly){
+        if($xml.OfficeApp.ProviderName -ne "Microsoft"){
+            return
+        }
+    }
 
     # find the download url for the pbiviz file
     $fileUrl = $xml.OfficeApp.DefaultSettings.SourceLocation.DefaultValue
