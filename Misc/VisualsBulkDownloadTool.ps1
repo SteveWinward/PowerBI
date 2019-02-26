@@ -46,6 +46,7 @@ $json.Values | foreach {
     # Download the manifest xml file
     [xml]$xml = (New-Object System.Net.WebClient).DownloadString($_.ManifestUrl)
 
+    # Filter out Microsoft only created visuals if specified
     if($MicrosoftOnly){
         if($xml.OfficeApp.ProviderName -ne "Microsoft"){
             return
