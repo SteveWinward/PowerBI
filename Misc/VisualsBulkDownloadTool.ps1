@@ -14,7 +14,7 @@ param (
 )
 
 # Create the downloads path as a subdirectory to the current working directory of the script
-$downloadFolder = Join-Path $PSScriptRoot 'downloads'
+$downloadFolder = Join-Path (Get-Location) 'downloads'
 
 # Create the downloads folder if it doesn't already exist
 if(-not (Test-Path $downloadFolder)){
