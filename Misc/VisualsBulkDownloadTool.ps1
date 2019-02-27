@@ -6,7 +6,7 @@
 # You can optionally specify the -CertifiedOnly switch to only download visuals
 # that have gone through the certification process.
 #
-# You can optionally specifcy the -MicrosoftOnly switch to download visuals that
+# You can optionally specify the -MicrosoftOnly switch to download visuals that
 # are created by Microsoft
 param (
     [switch]$CertifiedOnly = $false,
