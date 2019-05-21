@@ -1,4 +1,13 @@
-﻿# This requries you to create an AAD Application ahead of time.
+﻿# Created by Steve Winward
+# 
+# This script is a sample to show how you can work with the Azure for Governemnt
+# Graph API endpoint
+#
+# This requries you to create an AAD Application ahead of time.  You will also need
+# to create a client secret for the AAD applciation and then also setup the API Permissions.
+# 
+# More details can be found below on this,
+# https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/add-application-portal
 
 $tenantname     = "<INSERT_ACTUAL_TENANT_GUID>"
 $ClientID       = "<INSERT_ACTUAL_CLIENT_ID>" #This is the Applicaiton ID of the AAD App
