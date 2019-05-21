@@ -1,4 +1,6 @@
-﻿$tenantname     = "<INSERT_ACTUAL_TENANT_GUID>"
+﻿# This requries you to create an AAD Application ahead of time.
+
+$tenantname     = "<INSERT_ACTUAL_TENANT_GUID>"
 $ClientID       = "<INSERT_ACTUAL_CLIENT_ID>" 
 $ClientSecret   = "<INSERT_ACTUAL_CLIENT_SECRET>"
 
