@@ -11,3 +11,10 @@ $body       = @{grant_type="client_credentials";resource=$resource;client_id=$Cl
 $oauth      = Invoke-RestMethod -Method POST -Uri $loginURL/$tenantname/oauth2/token?api-version=1.0 -Body $body 
 
 $oauth.access_token
+
+# Sample call to list all users in the tenant
+$graphOperationUrl = "https://graph.microsoft.us/v1.0/users"
+$headerParams = @{'Authorization'="$($oauth.token_type) $($oauth.access_token)"}
+$response = (Invoke-WebRequest -UseBasicParsing -Headers $headerParams -Uri $graphOperationUrl -Method GET) 
+
+$response
