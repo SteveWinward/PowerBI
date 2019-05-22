@@ -9,19 +9,26 @@
 # More details can be found below on this,
 # https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/add-application-portal
 
-$tenantname     = "<INSERT_ACTUAL_TENANT_GUID>"
+$TenantName     = "<INSERT_ACTUAL_TENANT_GUID>"
 $ClientID       = "<INSERT_ACTUAL_CLIENT_ID>" #This is the Applicaiton ID of the AAD App
 $ClientSecret   = "<INSERT_ACTUAL_CLIENT_SECRET>" #This is the client secret you create for the AAD App 
 
 # This is the Azure for Government login URL
-$loginURL       = "https://login.microsoftonline.us"
+$LoginUrl       = "https://login.microsoftonline.us"
 
 # This is the Graph API endpoint for Azure for Government
-$resource       = "https://graph.microsoft.us" 
+$Resource       = "https://graph.microsoft.us" 
 
 # Constructs an HTTP POST request to get an OAuth token from AAD
-$body       = @{grant_type="client_credentials";resource=$resource;client_id=$ClientID;client_secret=$ClientSecret} 
-$oauth      = Invoke-RestMethod -Method POST -Uri $loginURL/$tenantname/oauth2/token?api-version=1.0 -Body $body 
+$body = 
+@{
+    grant_type="client_credentials";
+    resource=$Resource;
+    client_id=$ClientID;
+    client_secret=$ClientSecret
+}
+
+$oauth = Invoke-RestMethod -Method POST -Uri $LoginUrl/$TenantName/oauth2/token?api-version=1.0 -Body $body 
 
 # Outputs the JWT token for debugging
 Write-Output "JWT Token =>"
