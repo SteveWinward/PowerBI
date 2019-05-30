@@ -81,6 +81,7 @@ $url = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=A
 # Execute the REST call and parse the results into JSON
 Write-Output "Attempting to download the list of all Power BI visuals"
 
+# Wrap the download call in a Retry-Command to try and recover from transient errors
 $json = Retry-Command -ScriptBlock { Invoke-WebRequest $url | ConvertFrom-Json }.GetNewClosure() -Verbose
 
 # loop over all results
