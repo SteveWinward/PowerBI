@@ -75,11 +75,13 @@ if(-not (Test-Path $downloadFolder)){
     New-Item -Path $downloadFolder -ItemType Directory
 }
 
-# Download the list of all Power BI Visuals from the search api
-$searchRequest = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=Any_PowerBI&top=1000'
+# This is the REST call to get all of the list of all Power BI visuals from the marketplace
+$url = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=Any_PowerBI&top=1000'
 
-# Parse the request as JSON
-$json = Invoke-WebRequest $searchRequest | ConvertFrom-Json 
+# Execute the REST call and parse the results into JSON
+Write-Output "Attempting to download the list of all Power BI visuals"
+
+$json = Retry-Command -ScriptBlock { Invoke-WebRequest $url | ConvertFrom-Json }.GetNewClosure() -Verbose
 
 # loop over all results
 $json.Values | foreach {
@@ -111,7 +113,7 @@ $json.Values | foreach {
     $visualName = $fileUrl.split('/')[-1]
 
     # print the visual name
-    $visualName
+    Write-Output "Attempting to download the visual: $visualName"
 
     # create the destination path
     $destFilePath = Join-Path $downloadFolder $visualName
@@ -122,5 +124,3 @@ $json.Values | foreach {
     # Wrap the download call in a Retry-Command to try and recover from transient errors
     Retry-Command -ScriptBlock {$wc.DownloadFile($fileUrl, $destFilePath)} -Verbose
 }
-
-
