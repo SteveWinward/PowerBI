@@ -15,7 +15,7 @@ param (
 
 # Reusing Retry-Command from Ridicurious's blog
 # https://ridicurious.com/2019/02/01/retry-command-in-powershell/
-function Retry-Command {
+function Invoke-RetryCommand {
     [CmdletBinding()]
     param (
         [parameter(Mandatory, ValueFromPipeline)] 
@@ -90,15 +90,15 @@ $url = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=A
 # Execute the REST call and parse the results into JSON
 Write-Output "Attempting to download the list of all Power BI visuals"
 
-# Wrap the download call in a Retry-Command to try and recover from transient errors
-$json = Retry-Command -ScriptBlock { Invoke-WebRequest $url | ConvertFrom-Json }.GetNewClosure() -Verbose
+# Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
+$json = Invoke-RetryCommand -ScriptBlock { Invoke-WebRequest $url | ConvertFrom-Json }.GetNewClosure() -Verbose
 
 # loop over all results
-$json.Values | foreach {
+$json.Values | ForEach-Object {
     # if the CertifiedOnly switch was specified, skip any visuals that are not certified
     if($CertifiedOnly){
         # Check the categories attributes to see if "Power BI Certified" exists
-        $containsCertified = $_.Categories | where {$_.Id -eq 'Power BI Certified'}
+        $containsCertified = $_.Categories | Where-Object {$_.Id -eq 'Power BI Certified'}
 
         # If it is not certified, skip this visual and go to the next one
         if($containsCertified -eq $null){
@@ -131,6 +131,6 @@ $json.Values | foreach {
     # download and save the pbiviz file to the downloads subfolder
     $wc = New-Object System.Net.WebClient
 
-    # Wrap the download call in a Retry-Command to try and recover from transient errors
-    Retry-Command -ScriptBlock {$wc.DownloadFile($fileUrl, $destFilePath)} -Verbose
+    # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
+    Invoke-RetryCommand -ScriptBlock {$wc.DownloadFile($fileUrl, $destFilePath)} -Verbose
 }
