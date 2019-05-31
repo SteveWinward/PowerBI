@@ -16,21 +16,6 @@ steps:
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Misc\\VisualsBulkDownloadTool.ps1'
 
-# Test to make sure at least one pbiviz file was downloaded
 - task: PowerShell@2
   inputs:
-    targetType: 'inline'
-    script: '# check in the downloads folder to see if at least one pbiviz file was downloaded
-      $(Build.SourcesDirectory)\\Misc\\downloads
-      Get-ChildItem -Path $(Build.SourcesDirectory)\\Misc\\downloads -Filter *.pbiviz -Recurse      
-
-      $pbiVizFileCount = (Get-ChildItem -Path $(Build.SourcesDirectory)\\Misc\\downloads -Filter *.pbiviz -Recurse).Count
-      $pbiVizFileCount
-      
-      $pbiVizFilesExist = $pbiVizFileCount -gt 0
-      $pbiVizFilesExist
-
-      Write-Output "Found $pbiVizFileCount pbiviz files in the downloads folder"
-
-      # if the folder does not contain a pbiviz file, throw an exception
-      if(-not $pbiVizFilesExist){ throw "No pbiviz files were downloaded" }'
+    filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
