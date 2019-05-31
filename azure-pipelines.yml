@@ -6,15 +6,8 @@
 trigger:
 - master
 
-# Run the build across the last three versions of Windows Server for backwards compatibility
-strategy:
-  matrix:
-    windows2019:
-      imageName: 'windows-2019'
-  maxParallel: 1
-
 pool:
-  vmImage: $(imageName)
+  vmImage: 'windows-2019'
 
 steps:
 
