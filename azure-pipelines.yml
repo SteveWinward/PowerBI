@@ -6,8 +6,13 @@
 trigger:
 - master
 
+strategy:
+  matrix:
+    win2016:
+      imageName: 'vs2017-win2016'
+
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: $(imageName)
 
 steps:
 
