@@ -17,7 +17,12 @@ steps:
     filePath: '$(Build.SourcesDirectory)\\Misc\\VisualsBulkDownloadTool.ps1'
     arguments: '-CertifiedOnly -MicrosoftOnly'
 
-# Test to make sure that there is at least on pbiviz file that was downloaded
+# Test to make sure that there is at least one pbiviz file that was downloaded
 - task: PowerShell@2
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
+
+# Run the Python setup script
+- task: PowerShell@2
+  inputs:
+    filePath: '$(Build.SourcesDirectory)\\Python\\PythonSetup.ps1'
