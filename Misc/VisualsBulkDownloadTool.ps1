@@ -66,7 +66,12 @@ function Retry-Command {
 
 # Forcing TLS 1.2 for all web requests in this script
 # https://stackoverflow.com/questions/41618766/powershell-invoke-webrequest-fails-with-ssl-tls-secure-channel
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+# This only needs to be set for Windows 8 and older client operating systems.
+if([System.Environment]::OSVersion.Version.Major -lt 10){
+    Write-Output "Forcing TLS 1.2 for Windows 8 and older clients"
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Write-Output ""
+}
 
 # Create the downloads path as a subdirectory to the current working directory of the script
 $downloadFolder = Join-Path (Get-Location) 'downloads'
