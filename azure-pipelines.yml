@@ -14,7 +14,7 @@ strategy:
   maxParallel: 1
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: $(imageName)
 
 steps:
 
