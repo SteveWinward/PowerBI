@@ -1,8 +1,8 @@
 Get-ChildItem
 
-Get-ChildItem -Path .\Misc\downloads -Filter *.pbiviz -Recurse      
+Get-ChildItem -Path .\downloads -Filter *.pbiviz -Recurse      
 
-$pbiVizFileCount = (Get-ChildItem -Path .\Misc\downloads -Filter *.pbiviz -Recurse).Count
+$pbiVizFileCount = (Get-ChildItem -Path .\downloads -Filter *.pbiviz -Recurse).Count
 $pbiVizFileCount
 
 $pbiVizFilesExist = $pbiVizFileCount -gt 0
