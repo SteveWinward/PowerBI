@@ -13,7 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+# Run the VisualsBulkDownloadTool.ps1 script to make sure there are no errors
+- task: PowerShell@2
+  inputs:
+    filePath: '$(Build.SourcesDirectory)\\Misc\\VisualsBulkDownloadTool.ps1'
