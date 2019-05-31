@@ -10,11 +10,11 @@ trigger:
 strategy:
   matrix:
     windows2019:
-      imageName: "windows-2019"
+      imageName: 'windows-2019'
   maxParallel: 1
 
 pool:
-  vmImage: $(imageName)
+  vmImage: 'windows-2019'
 
 steps:
 
