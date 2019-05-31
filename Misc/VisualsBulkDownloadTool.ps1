@@ -64,6 +64,9 @@ function Retry-Command {
 }
 # End Ridicurious Retry-Command function
 
+# Forcing TLS 1.2 for all web requests in this script
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 # Create the downloads path as a subdirectory to the current working directory of the script
 $downloadFolder = Join-Path (Get-Location) 'downloads'
 
