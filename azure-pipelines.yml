@@ -6,13 +6,8 @@
 trigger:
 - master
 
-strategy:
-  matrix:
-    win2016:
-      imageName: 'vs2017-win2016'
-
 pool:
-  vmImage: $(imageName)
+  vmImage: 'windows-2019'
 
 steps:
 
