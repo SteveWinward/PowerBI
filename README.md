@@ -28,6 +28,7 @@ You can download the sample files below
 
 * [August, 2018](/Misc/d3js_report_server_aug_2018.pbix)
 * [January, 2019](/Misc/d3js_report_server_jan_2019.pbix)
+* [May, 2019](/Misc/d3js_report_server_may_2019.pbix)
 
 ## Visuals Marketplace Bulk Download
 I created a PowerShell script that allows you to download all Power BI visuals from the marketplace at one time.  The script can be found [here](/Misc/VisualsBulkDownloadTool.ps1)
