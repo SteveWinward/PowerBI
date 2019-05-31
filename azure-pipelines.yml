@@ -21,7 +21,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: '# check in the downloads folder to see if at least one pbiviz file was downloaded
-      $filesExist = (Get-ChildItem -Path .\Misc\downloads -Filter *.pbiviz -Recurse).Count -gt 0
+      $pbiVizFileCount = (Get-ChildItem -Path .\\Misc\\downloads -Filter *.pbiviz -Recurse).Count
+      $pbiVizFilesExist = $pbiVizFileCount -gt 0
       
+      Write-Output "Found $pbiVizFileCount pbiviz files in the downloads folder"
+
       # if the folder does not contain a pbiviz file, throw an exception
-      if(-not $filesExist){ throw "No pbiviz files were downloaded" }'
+      if(-not $pbiVizFilesExist){ throw "No pbiviz files were downloaded" }'
