@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/stevewi2019/stevewi/_apis/build/status/SteveWinward.PowerBI?branchName=master)](https://dev.azure.com/stevewi2019/stevewi/_build/latest?definitionId=1&branchName=master)
+
 # Power BI Resources
 Power BI training resources, presentations and downloads
 
