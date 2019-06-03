@@ -6,8 +6,14 @@
 trigger:
 - master
 
+strategy:
+  matrix:
+    win2019:
+      imageName: "windows-2019"
+  maxParallel: 1
+
 pool:
-  vmImage: 'windows-2019'
+  vmImage: $(imageName)
 
 steps:
 
