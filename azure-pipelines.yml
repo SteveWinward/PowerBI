@@ -20,12 +20,12 @@ steps:
 
 # Test to make sure that there is at least one pbiviz file that was downloaded
 - task: PowerShell@2
-  displayName: "Running tests agains the results of VisualsBulkDownloadTool.ps1 script running"
+  displayName: "Testing VisualsBulkDownloadTool.ps1 results"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
 
 # Run the Python setup script
 - task: PowerShell@2
-  displayName: "Running python setup script to install modules required for Power BI"
+  displayName: "Testing Python Power BI Setup Script"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Python\\PythonSetup.ps1'
