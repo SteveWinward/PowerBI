@@ -1,3 +1,7 @@
+Write-Output "Printing out the Windows OS Version Info"
+[System.Environment]::OSVersion
+Write-Output ""
+
 Get-ChildItem
 
 Get-ChildItem -Path .\downloads -Filter *.pbiviz -Recurse      
