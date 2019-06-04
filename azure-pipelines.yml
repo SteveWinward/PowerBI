@@ -1,28 +1,39 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
+# Build pipeline for Azure DevOps
 # https://aka.ms/yaml
 
+# trigger CI builds off of master commits
 trigger:
 - master
 
+# run the build against different versions of Windows to test backwards compatability
+strategy:
+  matrix:
+    win2019:
+      imageName: "windows-2019"
+    win2016:
+      imageName: "vs2017-win2016"
+  maxParallel: 1
+
 pool:
-  vmImage: 'windows-2019'
+  vmImage: $(imageName)
 
 steps:
 
 # Run the VisualsBulkDownloadTool.ps1 script to make sure there are no errors
 - task: PowerShell@2
+  displayName: "Running VisualsBulkDownloadTool.ps1 script"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Misc\\VisualsBulkDownloadTool.ps1'
     arguments: '-CertifiedOnly -MicrosoftOnly'
 
 # Test to make sure that there is at least one pbiviz file that was downloaded
 - task: PowerShell@2
+  displayName: "Testing VisualsBulkDownloadTool.ps1 results"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
 
 # Run the Python setup script
 - task: PowerShell@2
+  displayName: "Testing Python Power BI Setup Script"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Python\\PythonSetup.ps1'
