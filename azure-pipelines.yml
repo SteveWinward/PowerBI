@@ -1,19 +1,17 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
+# Build pipeline for Azure DevOps
 # https://aka.ms/yaml
 
+# trigger CI builds off of master commits
 trigger:
 - master
 
+# run the build against different versions of Windows to test backwards compatability
 strategy:
   matrix:
     win2019:
       imageName: "windows-2019"
     win2016:
       imageName: "vs2017-win2016"
-    win2012r2:
-      imageName: "vs2015-win2012r2"
   maxParallel: 1
 
 pool:
