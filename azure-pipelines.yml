@@ -33,9 +33,3 @@ steps:
   displayName: "Testing VisualsBulkDownloadTool.ps1 results"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
-
-# Run the Python setup script
-- task: PowerShell@2
-  displayName: "Testing Python Power BI Setup Script"
-  inputs:
-    filePath: '$(Build.SourcesDirectory)\\Python\\PythonSetup.ps1'
