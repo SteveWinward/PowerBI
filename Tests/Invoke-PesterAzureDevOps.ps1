@@ -3,13 +3,27 @@
 # https://github.com/devopsdina/ado-pipelines-demo-win/blob/master/Invoke-PesterAzureDevOps.ps1
 
 # Install Pester
-Install-Module -Name Pester -Force -SkipPublisherCheck
+Write-Host "Installing Pester Module"
+
+try{
+    Install-Module -Name Pester -Force -SkipPublisherCheck
+}
+catch{
+    Install-Module -Name Pester -Force
+}
+
+Write-Host ""
 
 # Import the Pester Module
+Write-Host "Importing Pester Module"
 Import-Module Pester
+Write-Host ""
 
 $outputFile = ".\TEST-RESULTS.xml"
 
-Invoke-Pester -OutputFile $outputFile -OutputFormat NUnitXml
+Write-Host "Running Pester"
+Invoke-Pester -OutputFile $outputFile -OutputFormat ".\Tests\NUnitXml"
+Write-Host ""
 
+Write-Host "Outputting file structure for debugging"
 Get-ChildItem -Recurse
