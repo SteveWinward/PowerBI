@@ -32,10 +32,10 @@ steps:
 - task: PowerShell@2
   displayName: "Testing VisualsBulkDownloadTool.ps1 results"
   inputs:
-    filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
+    filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadTool.Tests.ps1'
 
 # Run the Pester Unit Test framework
-- powershell: ./Tests/Invoke-PesterAzureDevOps.ps1
+- powershell: '$(Build.SourcesDirectory)\\Tests\\Invoke-PesterAzureDevOps.ps1'
   displayName: 'Run pester'
 
 # Publish the Pester test results to DevOps
