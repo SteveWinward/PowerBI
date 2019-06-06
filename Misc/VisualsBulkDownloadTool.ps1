@@ -64,10 +64,21 @@ function Invoke-RetryCommand {
 }
 # End Ridicurious Retry-Command function
 
+# For debugging purposes, output the OS Version information
+Write-Output "OS Version Information"
+[System.Environment]::OSVersion
+Write-Output ""
+
+# Determing if this is running on a "Legacy Windows OS", anything before Windows 8
+$LegacyWindowsOS = $false
+if([System.Environment]::OSVersion.Version.Major -lt 10){
+    $LegacyWindowsOS = $true
+}
+
 # Forcing TLS 1.2 for all web requests in this script
 # https://stackoverflow.com/questions/41618766/powershell-invoke-webrequest-fails-with-ssl-tls-secure-channel
 # This only needs to be set for Windows 8 and older client operating systems.
-if([System.Environment]::OSVersion.Version.Major -lt 10){
+if($LegacyWindowsOS){
     Write-Output "Forcing TLS 1.2 for Windows 8 and older clients"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Write-Output ""
@@ -91,7 +102,9 @@ $url = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=A
 Write-Output "Attempting to download the list of all Power BI visuals"
 
 # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
-$json = Invoke-RetryCommand -ScriptBlock { Invoke-WebRequest $url | ConvertFrom-Json }.GetNewClosure() -Verbose
+# NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's
+# https://stackoverflow.com/questions/38005341/the-response-content-cannot-be-parsed-because-the-internet-explorer-engine-is-no
+$json = Invoke-RetryCommand -ScriptBlock { Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS | ConvertFrom-Json }.GetNewClosure() -Verbose
 
 # loop over all results
 $json.Values | ForEach-Object {

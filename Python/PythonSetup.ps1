@@ -8,6 +8,10 @@ Write-Output "Setting the Python encoding to UTF-8"
 $env:PYTHONIOENCODING = "UTF-8"
 Write-Output ""
 
+Write-Output "Ensuring PIP is installed"
+python -m ensurepip
+Write-Output ""
+
 Write-Output "Upgrading PIP installer"
 python -m pip install --upgrade pip
 Write-Output ""
