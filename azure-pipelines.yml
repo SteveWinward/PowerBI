@@ -33,3 +33,17 @@ steps:
   displayName: "Testing VisualsBulkDownloadTool.ps1 results"
   inputs:
     filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
+
+# Run the Pester Unit Test framework
+- powershell: ./Tests/Invoke-PesterAzureDevOps.ps1
+  displayName: 'Run pester'
+
+# Publish the Pester test results to DevOps
+- task: PublishTestResults@2
+  displayName: "Publish Test Results"
+  inputs:
+    testRunTitle: 'Test Results for Pester'
+    buildPlatform: 'Windows'
+    testRunner: 'NUnit'
+    testResultsFiles: '$(Build.SourcesDirectory)\\Tests\\TEST-RESULTS.xml'
+    failTaskOnFailedTests: true # required to fail build when tests fail
