@@ -11,3 +11,5 @@ Import-Module Pester
 $outputFile = ".\TEST-RESULTS.xml"
 
 Invoke-Pester -OutputFile $outputFile -OutputFormat NUnitXml
+
+Get-ChildItem -Recurse

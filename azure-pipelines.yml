@@ -21,19 +21,6 @@ pool:
 
 steps:
 
-# Run the VisualsBulkDownloadTool.ps1 script to make sure there are no errors
-- task: PowerShell@2
-  displayName: "Running VisualsBulkDownloadTool.ps1 script"
-  inputs:
-    filePath: '$(Build.SourcesDirectory)\\Misc\\VisualsBulkDownloadTool.ps1'
-    arguments: '-CertifiedOnly -MicrosoftOnly'
-
-# Test to make sure that there is at least one pbiviz file that was downloaded
-- task: PowerShell@2
-  displayName: "Testing VisualsBulkDownloadTool.ps1 results"
-  inputs:
-    filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadTool.Tests.ps1'
-
 # Run the Pester Unit Test framework
 - powershell: '$(Build.SourcesDirectory)\\Tests\\Invoke-PesterAzureDevOps.ps1'
   displayName: 'Run pester'
