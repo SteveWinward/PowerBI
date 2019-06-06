@@ -12,8 +12,6 @@ strategy:
       imageName: "windows-2019"
     win2016:
       imageName: "vs2017-win2016"
-    win2012r2:
-      imageName: "vs2015-win2012r2"
   maxParallel: 1
 
 pool:
@@ -21,15 +19,16 @@ pool:
 
 steps:
 
-# Run the VisualsBulkDownloadTool.ps1 script to make sure there are no errors
-- task: PowerShell@2
-  displayName: "Running VisualsBulkDownloadTool.ps1 script"
-  inputs:
-    filePath: '$(Build.SourcesDirectory)\\Misc\\VisualsBulkDownloadTool.ps1'
-    arguments: '-CertifiedOnly -MicrosoftOnly'
+# Run the Pester Unit Test framework
+- powershell: '$(Build.SourcesDirectory)\\Tests\\Invoke-PesterAzureDevOps.ps1'
+  displayName: 'Run Pester Unit Test Framework'
 
-# Test to make sure that there is at least one pbiviz file that was downloaded
-- task: PowerShell@2
-  displayName: "Testing VisualsBulkDownloadTool.ps1 results"
+# Publish the Pester test results
+- task: PublishTestResults@2
+  displayName: "Publish Test Results"
   inputs:
-    filePath: '$(Build.SourcesDirectory)\\Tests\\VisualsBulkDownloadToolTests.ps1'
+    testRunTitle: 'Test Results for Pester'
+    buildPlatform: 'Windows'
+    testRunner: 'NUnit'
+    testResultsFiles: '$(Build.SourcesDirectory)\\Tests\\TEST-RESULTS.xml'
+    failTaskOnFailedTests: true # required to fail build when tests fail
