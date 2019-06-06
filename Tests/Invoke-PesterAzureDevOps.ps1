@@ -19,10 +19,10 @@ Write-Host "Importing Pester Module"
 Import-Module Pester
 Write-Host ""
 
-$outputFile = ".\TEST-RESULTS.xml"
+$outputFile = ".\Tests\TEST-RESULTS.xml"
 
 Write-Host "Running Pester"
-Invoke-Pester -OutputFile $outputFile -OutputFormat ".\Tests\NUnitXml"
+Invoke-Pester -OutputFile $outputFile -OutputFormat NUnitXml
 Write-Host ""
 
 Write-Host "Outputting file structure for debugging"

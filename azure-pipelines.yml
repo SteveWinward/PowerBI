@@ -23,9 +23,9 @@ steps:
 
 # Run the Pester Unit Test framework
 - powershell: '$(Build.SourcesDirectory)\\Tests\\Invoke-PesterAzureDevOps.ps1'
-  displayName: 'Run pester'
+  displayName: 'Run Pester Unit Test Framework'
 
-# Publish the Pester test results to DevOps
+# Publish the Pester test results
 - task: PublishTestResults@2
   displayName: "Publish Test Results"
   inputs:
