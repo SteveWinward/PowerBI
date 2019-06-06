@@ -2,6 +2,9 @@
 # To run locally, simply just run Invoke-Pester, no need to run this script
 # https://github.com/devopsdina/ado-pipelines-demo-win/blob/master/Invoke-PesterAzureDevOps.ps1
 
+# Debugging PowerShell version number
+$PSVersionTable.PSVersion
+
 # Install Pester
 Write-Host "Installing Pester Module"
 
