@@ -3,7 +3,9 @@
 # https://github.com/devopsdina/ado-pipelines-demo-win/blob/master/Invoke-PesterAzureDevOps.ps1
 
 # Debugging PowerShell version number
+Write-Host "Showing PowerShell Version Info"
 $PSVersionTable.PSVersion
+Write-Host ""
 
 # Install Pester
 Write-Host "Installing Pester Module"
