@@ -32,3 +32,13 @@ You can download the sample files below
 
 ## Visuals Marketplace Bulk Download
 I created a PowerShell script that allows you to download all Power BI visuals from the marketplace at one time.  The script can be found [here](/Misc/VisualsBulkDownloadTool.ps1)
+
+## Shape Maps
+Here's the link to Microsoft's online docs for Power BI Shape Maps,
+
+[Power BI Shape Maps Documentation](https://docs.microsoft.com/en-us/power-bi/visuals/desktop-shape-map)
+
+Below are some custom TopoJSON files I have built,
+
+* [US District Attorneys Map](/ShapeMaps/US_DistrictAttorneys_CONUS.json)
+* [US Trustees Program Regions Map](/ShapeMaps/USTP_Regions_Map_CONUS.json)
