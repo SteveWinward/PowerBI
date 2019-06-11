@@ -11,10 +11,10 @@ Write-Host ""
 Write-Host "Installing Pester Module"
 
 try{
-    Install-Module -Name Pester -Force -SkipPublisherCheck
+    Install-Module -Name Pester -Force -SkipPublisherCheck -Verbose
 }
 catch{
-    Install-Module -Name Pester -Force
+    Install-Module -Name Pester -Force -Verbose
 }
 
 Write-Host ""
