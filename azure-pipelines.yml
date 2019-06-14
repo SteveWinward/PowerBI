@@ -7,7 +7,7 @@ trigger:
 
 jobs:
   # The Windows 2019 and Windows 2016 builds
-- job: Win 2019 and Win 2016
+- job: ModernWindows
 
   # run the build against different versions of Windows to test backwards compatability
   strategy:
@@ -38,7 +38,7 @@ jobs:
       failTaskOnFailedTests: true # required to fail build when tests fail
 
   # The legacy Windows 2012 R2 Build
-- job: Win 2012 R2
+- job: LegacyWindows
 
   pool:
     vmImage: 'vs2015-win2012r2'
