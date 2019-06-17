@@ -12,6 +12,8 @@ Power BI training resources, presentations and downloads
 
 [Power BI Training Content](https://aka.ms/PBITraining)
 
+[Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
+
 # Presentations
 [Power BI Developer Scenarios](https://aka.ms/steve-pbi-dev)
 
@@ -20,7 +22,7 @@ First, check out the online docs for Power BI and Python integration [here](http
 
 Then, see the [PythonSetup.ps1](/Python/PythonSetup.ps1) file for specific Python module requirements.
 
-# Power BI Report Server Demos
+# Power BI Report Server
 ## D3.js Visual Demo
 Using the awesome [D3.js custom visual](https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104381354?tab=Overview), I recreated the sample file to work with Power BI Report Server for various release versions. 
 
@@ -31,9 +33,9 @@ You can download the sample files below
 * [May, 2019](/Misc/d3js_report_server_may_2019.pbix)
 
 ## Visuals Marketplace Bulk Download
-I created a PowerShell script that allows you to download all Power BI visuals from the marketplace at one time.  The script can be found [here](/Misc/VisualsBulkDownloadTool.ps1)
+I created a PowerShell script that allows you to download all Power BI visuals from the marketplace at one time.  The script can be found [here](/Misc/VisualsBulkDownloadTool.ps1).
 
-## Shape Maps
+# Shape Maps
 Here's the link to Microsoft's online docs for Power BI Shape Maps,
 
 [Power BI Shape Maps Documentation](https://docs.microsoft.com/en-us/power-bi/visuals/desktop-shape-map)
