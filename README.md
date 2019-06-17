@@ -35,6 +35,9 @@ You can download the sample files below
 ## Visuals Marketplace Bulk Download
 I created a PowerShell script that allows you to download all Power BI visuals from the marketplace at one time.  The script can be found [here](/Misc/VisualsBulkDownloadTool.ps1).
 
+## Comparing Power BI service (O365) to Power BI Report Server (on premise)
+[Comparison Table](https://docs.microsoft.com/en-us/power-bi/report-server/compare-report-server-service#features-of-power-bi-report-server-and-the-power-bi-service)
+
 # Shape Maps
 Here's the link to Microsoft's online docs for Power BI Shape Maps,
 
