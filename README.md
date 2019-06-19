@@ -47,3 +47,11 @@ Below are some custom TopoJSON files I have built,
 
 * [US District Attorneys Map](/ShapeMaps/US_DistrictAttorneys_CONUS.json)
 * [US Trustees Program Regions Map](/ShapeMaps/USTP_Regions_Map_CONUS.json)
+
+Mapshaper is a great website to convert existing shapefiles into TopoJSON format,
+
+[Mapshaper](https://mapshaper.org/)
+
+Build your own custom world map with select countries with this awesome site!
+
+https://geojson-maps.ash.ms/
