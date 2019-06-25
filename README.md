@@ -55,3 +55,8 @@ Mapshaper is a great website to convert existing shapefiles into TopoJSON format
 Build your own custom world map with select countries with this awesome site!
 
 https://geojson-maps.ash.ms/
+
+# Splunk
+Below is a write up on how to integrate Splunk search results with Power BI.
+
+[Power BI and Splunk](/WriteUps/splunk.md)
