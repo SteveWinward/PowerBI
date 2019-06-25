@@ -2,6 +2,8 @@
 Power BI can consume and visualize search result data from Splunk.  To do this, you need to leverage the Splunk REST API.  
 
 ## Splunk Setup
+The Splunk REST API documentation is below,
+
 [Splunk REST API Docs](http://dev.splunk.com/restapi)
 
 The Splunk REST API allows you to authenitcate with JWT tokens by passing it in as an Authorization header in the HTTP request,
