@@ -79,7 +79,7 @@ Putting this altogether, you can now use the Power BI web connector to make a RE
 https://SplunkServerDefaultCert:8089/services/search/jobs/export?output_mode=csv&search=search source="tutorialdata.zip:*" clientip="87.194.216.51" | stats count by host
 ```
 4. At the bottom you can specify HTTP headers.  Set the Authorization header to `Bearer <Token>`
-5. Your web connection should look like the screenshot below,
+5. Your web connection should look like the screenshot below.  Notice that you can break out the URL into parts to make it a little more readable.
 
 ![alt text](SplunkWebConnection.JPG "Web Connection Screenshot")
 
