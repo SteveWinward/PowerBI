@@ -81,7 +81,7 @@ https://SplunkServerDefaultCert:8089/services/search/jobs/export?output_mode=csv
 4. At the bottom you can specify HTTP headers.  Set the Authorization header to `Bearer <Token>`
 5. Your web connection should look like the screenshot below.  Notice that you can break out the URL into parts to make it a little more readable.
 
-![alt text](SplunkWebConnection.JPG "Web Connection Screenshot")
+![alt text](Images/splunk-web-connection-example.JPG "Web Connection Screenshot")
 
 Now you should be able to import the results and start visualizing the data.
 
