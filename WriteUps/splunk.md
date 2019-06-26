@@ -39,7 +39,7 @@ Once installed, you also need to ensure that your machine trusts the self signed
 127.0.0.1	SplunkServerDefaultCert
 ```
 
-* You can now access the REST endpoint with a trusted certificate by going to https://SplunkServerDefaultCert:8089
+* You can now access the REST endpoint with a trusted certificate by going to https://SplunkServerDefaultCert:8089 locally on the machine
 
 ## Splunk REST API Setup
 The Splunk REST API documentation is below,
