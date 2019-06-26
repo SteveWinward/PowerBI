@@ -61,7 +61,7 @@ Then, you need to create a token.  Details on this are below,
 Now that you have your token setup, you can now make a call to the search export endpoint for the Splunk API to export a search.
 
 ```
-https://<splunk_rest_url>:8089/services/search/jobs/export
+https://SplunkServerDefaultCert:8089/services/search/jobs/export
 ?output_mode=csv
 &search=search source="tutorialdata.zip:*" clientip="87.194.216.51" | stats count by host
 Authorization: Bearer <Splunk JWT Token>
