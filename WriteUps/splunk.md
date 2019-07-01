@@ -91,7 +91,9 @@ The method described for Power BI Desktop will not work if you want to setup sch
 Below are two different options to get this working,
 
 ### PowerShell
-You can setup a PowerShell script to run as a scheduled job (Azure Function, SQL Server SSIS, etc.) and store the search results into a database (ie SQL Server).  Below is a sample PowerShell script to call the Splunk REST API,
+You can setup a PowerShell script to run as a scheduled job (Azure Function, SQL Server SSIS, etc.) and store the search results into a database (ie SQL Server).  
+
+Below is a sample PowerShell script to call the Splunk REST API,
 
 ```
 # Replace the actual Splunk JWT Token here,
@@ -115,6 +117,8 @@ Invoke-WebRequest -Uri $requestUrl -Headers $Headers -Verbose
 
 ### C#
 You could also stand up a web service (Azure Function, ASP.NET Web API, etc) in C# to call the Splunk service and return the results.  This eliminates the need to store the Splunk results.
+
+Below is some sample C# code to call the Splunk Export function,
 
 ```
 var client = new HttpClient(handler);
