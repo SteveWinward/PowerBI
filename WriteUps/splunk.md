@@ -58,7 +58,7 @@ Then, you need to create a token.  Details on this are below,
 
 [Create tokens for Splunk](https://docs.splunk.com/Documentation/Splunk/7.3.0/Security/EnableTokenAuth#Create.2C_use.2C_manage.2C_and_delete_tokens)
 
-Now that you have your token setup, you can now make a call to the search export endpoint for the Splunk API to export a search.
+Now that you have your token setup, you can now make a call to the search export endpoint for the Splunk API to export a search.  The HTTP Request has been sepearted by new lines to make it more readable.
 
 ```
 https://SplunkServerDefaultCert:8089/services/search/jobs/export
