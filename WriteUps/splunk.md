@@ -69,7 +69,7 @@ Authorization: Bearer <Splunk JWT Token>
 
 Note that the search query string paramater must start with the "search" value.  
 
-## Get Splunk Data from Power BI
+## Get Splunk Data from Power BI Desktop
 Putting this altogether, you can now use the Power BI web connector to make a REST call to the Splunk API.
 
 1. Go to Get Data > Web.
@@ -85,3 +85,49 @@ https://SplunkServerDefaultCert:8089/services/search/jobs/export?output_mode=csv
 
 Now you should be able to import the results and start visualizing the data.
 
+## Setting up Scheduled Refresh of Splunk Data
+The method described for Power BI Desktop will not work if you want to setup scheduled refreshes of the Splunk search results with the Power BI service in O365 or Power BI Report Server.
+
+Below are two different options to get this working,
+
+### PowerShell
+You can setup a PowerShell script to run as a scheduled job (Azure Function, SQL Server SSIS, etc.) and store the search results into a database (ie SQL Server).  Below is a sample PowerShell script to call the Splunk REST API,
+
+```
+# Replace the actual Splunk JWT Token here,
+$token = '<INSERT_TOKEN_HERE>'
+
+# The endpoint will be different based on your Splunk instance
+$exportUrl = 'https://SplunkServerDefaultCert:8089/services/search/jobs/export?'
+$output_mode = 'csv'
+$search = 'search source="tutorialdata.zip:*" clientip="87.194.216.51" | stats count by host'
+
+# Constructs the Request URL 
+$requestUrl = $exportUrl + 'output_mode=' + $output_mode + '&search=' + $search
+
+# Add the Token to the Authorization header
+$Headers = @{}
+$Headers.Add('Authorization', 'Bearer ' + $token)
+
+# Call the REST endpoint
+Invoke-WebRequest -Uri $requestUrl -Headers $Headers -Verbose
+```
+
+### C#
+You could also stand up a web service (Azure Function, ASP.NET Web API, etc) in C# to call the Splunk service and return the results.  This eliminates the need to store the Splunk results.
+
+```
+var client = new HttpClient(handler);
+
+// Add the JWT token to the Authorization header
+client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+
+var url = QueryHelpers.AddQueryString($"{splunkUrl}/services/search/jobs/export",
+    new Dictionary<string, string>()
+    {
+        {"output_mode", outputMode },
+        {"search", search },
+    });
+
+var response = await client.GetAsync(url);
+```
