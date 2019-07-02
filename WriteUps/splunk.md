@@ -146,6 +146,7 @@ var search = "search source=\"tutorialdata.zip:*\" clientip=\"87.194.216.51\" | 
 // Add the JWT token to the Authorization header
 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
 
+// Append the query string to the base URL
 var url = QueryHelpers.AddQueryString($"{splunkUrl}/services/search/jobs/export",
     new Dictionary<string, string>()
     {
@@ -153,5 +154,6 @@ var url = QueryHelpers.AddQueryString($"{splunkUrl}/services/search/jobs/export"
         {"search", search },
     });
 
+// Call the REST endpoint
 var response = await client.GetAsync(url);
 ```
