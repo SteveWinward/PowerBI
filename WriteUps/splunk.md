@@ -41,6 +41,11 @@ Once installed, you also need to ensure that your machine trusts the self signed
 
 * You can now access the REST endpoint with a trusted certificate by going to https://SplunkServerDefaultCert:8089 locally on the machine
 
+## Loading Sample Data
+For this write up, I used the tutorial data files from Splunks documentation site.  Below are instructions on how to upload those files to your test Splunk instance,
+
+[Upload the tutorial data](https://docs.splunk.com/Documentation/Splunk/7.3.0/SearchTutorial/GetthetutorialdataintoSplunk)
+
 ## Splunk REST API Setup
 The Splunk REST API documentation is below,
 
@@ -103,7 +108,11 @@ $token = '<INSERT_TOKEN_HERE>'
 
 # The endpoint will be different based on your Splunk instance
 $exportUrl = 'https://SplunkServerDefaultCert:8089/services/search/jobs/export?'
+
+# The output mode, csv works best with Power BI
 $output_mode = 'csv'
+
+# The search query
 $search = 'search source="tutorialdata.zip:*" clientip="87.194.216.51" | stats count by host'
 
 # Constructs the Request URL 
@@ -124,6 +133,15 @@ Below is some sample C# code to call the Splunk Export function,
 
 ```
 var client = new HttpClient(handler);
+
+// Add the JWT token value here
+var token = "<INSERT_JWT_TOKEN_HERE>";
+
+// The output mode, csv works best with Power BI for these results
+var outputMode = "csv";
+
+// The search query
+var search = "search source=\"tutorialdata.zip:*\" clientip=\"87.194.216.51\" | stats count by host";
 
 // Add the JWT token to the Authorization header
 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
