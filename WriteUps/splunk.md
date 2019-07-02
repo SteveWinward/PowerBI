@@ -86,9 +86,11 @@ https://SplunkServerDefaultCert:8089/services/search/jobs/export?output_mode=csv
 Now you should be able to import the results and start visualizing the data.
 
 ## Setting up Scheduled Refresh of Splunk Data
-The method described for Power BI Desktop will not work if you want to setup scheduled refreshes of the Splunk search results with the Power BI service in O365 or Power BI Report Server.
+The method described for Power BI Desktop will not work if you want to setup scheduled refreshes of the Splunk search results with the Power BI service in O365 or Power BI Report Server.  The techincal issue is that the Authorization: Bearer <TOKEN> header value gets stripped from the connection when uploading to the service.
+    
+The result is that you have to either store the search results into a temporary storage layer like SQL Server or stand up a web service that calls the Splunk API and the web service uses one of the support authentication methods of Power BI Desktop.
 
-Below are two different options to get this working,
+Below are two different snippets of code to programmatically call the Splunk REST API.  
 
 ### PowerShell
 You can setup a PowerShell script to run as a scheduled job (Azure Function, SQL Server SSIS, etc.) and store the search results into a database (ie SQL Server).  
