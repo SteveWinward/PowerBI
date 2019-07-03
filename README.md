@@ -56,6 +56,10 @@ Build your own custom world map with select countries with this awesome site!
 
 https://geojson-maps.ash.ms/
 
+Here's a write up on creating a world map with the shape map visual,
+
+[World Map Shape Map Example](/WriteUps/world-map.md)
+
 # Splunk
 Below is a write up on how to integrate Splunk search results with Power BI.
 
