@@ -56,6 +56,10 @@ Build your own custom world map with select countries with this awesome site!
 
 https://geojson-maps.ash.ms/
 
+Edit TopoJSON files to include additional properties,
+
+http://geojson.io
+
 Here's a write up on creating a world map with the shape map visual,
 
 [World Map Shape Map Example](/WriteUps/world-map.md)
