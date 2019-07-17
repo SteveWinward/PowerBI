@@ -123,7 +123,18 @@ $Headers = @{}
 $Headers.Add('Authorization', 'Bearer ' + $token)
 
 # Call the REST endpoint
-Invoke-WebRequest -Uri $requestUrl -Headers $Headers -Verbose
+$response = Invoke-WebRequest -Uri $requestUrl -Headers $Headers -Verbose
+
+# If the call was successful, output just the content of the response
+if($response.StatusCode -eq 200){
+    # Outputs the body
+    $response.Content
+}
+# otherwise, display the raw response for debugging
+else{
+    Write-Host "Error with the REST call"
+    $response
+}
 ```
 
 ### C#
