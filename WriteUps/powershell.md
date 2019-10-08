@@ -3,6 +3,8 @@ Below are samples to connect to US Government O365 environments (GCC, GCC High a
 
 ## Power BI Admin Module
 
+https://docs.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps
+
 If you have not already done so, install the Power BI Admin module for PowerShell.  Note that you need to run this as an administrator.
 
 ```
@@ -30,6 +32,8 @@ Login-PowerBI -Environment USGovMil
 
 ## Exchange Online
 
+https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps
+
 ```
 # Set the user credentials
 $userCredential = Get-Credential
@@ -49,6 +53,9 @@ Import-PSSession $Session -DisableNameChecking
 ```
 
 ## Exhange Online with Multi-Factor Authentication (MFA)
+
+https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
+
 ```
 # Set the UserPrincipalName
 $upn = <john@contoso.com> # set this to your actual UPN
