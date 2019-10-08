@@ -60,11 +60,19 @@ Edit TopoJSON files to include additional properties,
 
 http://geojson.io
 
+
+# Write Ups
+## Splunk Integration
+Summarizes how to integrate Splunk search results with Power BI,
+
+[Power BI and Splunk](/WriteUps/splunk.md)
+
+## Shape Map World Map
 Here's a write up on creating a world map with the shape map visual,
 
 [World Map Shape Map Example](/WriteUps/world-map.md)
 
-# Splunk
-Below is a write up on how to integrate Splunk search results with Power BI.
+## PowerShell for US Governemnt Environments
+Here are some samples on connecting to US Government environments with various PowerShell modules,
 
-[Power BI and Splunk](/WriteUps/splunk.md)
+[PowerShell for US Government](/WriteUps/powershell.md)
