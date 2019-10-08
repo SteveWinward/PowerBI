@@ -47,3 +47,19 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $Session -DisableNameChecking
 
 ```
+
+## Exhange Online with Multi-Factor Authentication (MFA)
+```
+# Set the UserPrincipalName
+$upn = <john@contoso.com> # set this to your actual UPN
+
+# GCC
+Connect-EXOPSSession -UserPrincipalName $upn
+
+# GCC High
+Connect-EXOPSSession -UserPrincipalName $upn -ConnectionUri https://outlook.office365.us/powershell-liveid -AzureADAuthorizationEndPointUri https://login.microsoftonline.us/common
+
+# GCC DoD
+Connect-EXOPSSession -UserPrincipalName $upn -ConnectionUri https://webmail.apps.mil/powershell-liveid -AzureADAuthorizationEndPointUri https://login.microsoftonline.us/common
+
+```
