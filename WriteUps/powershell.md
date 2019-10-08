@@ -40,6 +40,9 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 # Setup the session (GCC High)
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.us/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
 
+# Setup the session (GCC DoD)
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook-dod.office365.us/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+
 # Import the session
 Import-PSSession $Session -DisableNameChecking
 
