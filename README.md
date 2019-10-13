@@ -72,7 +72,7 @@ Here's a write up on creating a world map with the shape map visual,
 
 [World Map Shape Map Example](/WriteUps/world-map.md)
 
-## PowerShell for US Governemnt Environments
+## PowerShell for US Government Environments
 Here are some samples on connecting to US Government environments with various PowerShell modules,
 
 [PowerShell for US Government](/WriteUps/powershell.md)
