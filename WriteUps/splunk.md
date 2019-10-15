@@ -1,6 +1,13 @@
 # Visualizing Splunk Data with Power BI
 Power BI can consume and visualize search result data from Splunk.  To do this, you need to leverage the Splunk REST API.  
 
+## Software Versions
+This has been tested with the following software versions,
+
+* Power BI Desktop September 2019 release
+* Splunk Enterprise 7.3.2
+* Windows Server 2019
+
 ## Installing Splunk for Test Purposes
 For development purposes, you can download a 60 day trial of Splunk Enterprise [here](https://www.splunk.com/en_us/download/splunk-enterprise.html).
 
