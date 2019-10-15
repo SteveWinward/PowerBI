@@ -9,7 +9,7 @@ This has been tested with the following software versions,
 * Windows Server 2019
 
 ## Installing Splunk for Test Purposes
-For development purposes, you can download a 60 day trial of Splunk Enterprise [here](https://www.splunk.com/en_us/download/splunk-enterprise.html).
+For development purposes, you can download a 60 day trial of Splunk Enterprise [here](https://www.splunk.com/en_us/download/splunk-enterprise.html).  After the 60 days expire, you will need to uninstall your environment and reinstall the trial software.
 
 Don't follow theses steps for a production scenario!
 
