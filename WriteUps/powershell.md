@@ -70,3 +70,29 @@ Connect-EXOPSSession -UserPrincipalName $upn -ConnectionUri https://outlook.offi
 Connect-EXOPSSession -UserPrincipalName $upn -ConnectionUri https://webmail.apps.mil/powershell-liveid -AzureADAuthorizationEndPointUri https://login.microsoftonline.us/common
 
 ```
+
+## Teams
+https://docs.microsoft.com/en-us/powershell/module/teams/connect-microsoftteams?view=teams-ps
+
+If you have not already done so, install the Power BI Admin module for PowerShell.  Note that you need to run this as an administrator.
+
+```
+Install-Module -Name MicrosoftTeams
+```
+
+If you have already installed it, make sure to update to the latest version
+
+```
+Update-Module -Name MicrosoftTeams
+```
+
+```
+# GCC
+Connect-MicrosoftTeams
+
+# GCC High
+Connect-MicrosoftTeams -TeamsEnvironment TeamsGCCH
+
+# GCC DoD
+Connect-MicrosoftTeams -TeamsEnvironment -TeamsDOD
+```
