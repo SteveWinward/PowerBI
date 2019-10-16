@@ -85,7 +85,7 @@ If you have already installed it, make sure to update to the latest version
 ```
 Update-Module -Name MicrosoftTeams
 ```
-
+Examples for GCC, GCC High and GCC DoD are below
 ```
 # GCC
 Connect-MicrosoftTeams
