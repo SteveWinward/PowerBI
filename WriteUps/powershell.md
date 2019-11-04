@@ -30,6 +30,31 @@ Login-PowerBI -Environment USGovHigh
 Login-PowerBI -Environment USGovMil
 ```
 
+## PowerApps
+
+https://docs.microsoft.com/en-us/power-platform/admin/powerapps-powershell
+
+To install the PowerApps modules, run the following.  Note that you need to run this as an administrator.
+
+```
+Install-Module -Name Microsoft.PowerApps.Administration.PowerShell
+Install-Module -Name Microsoft.PowerApps.PowerShell -AllowClobber
+```
+
+If you have already installed it, make sure to update to the latest version
+
+```
+Update-Module -Name Microsoft.PowerApps.Administration.PowerShell
+Update-Module -Name Microsoft.PowerApps.PowerShell
+```
+
+```
+# Add an account in GCC Moderate
+Add-PowerAppsAccount -Endpoint "usgov" 
+```
+
+NOTE: Today (11/4/2019), GCC High and GCC DoD for PowerApps is not supported
+
 ## Exchange Online
 
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps
