@@ -48,12 +48,12 @@ Update-Module -Name Microsoft.PowerApps.Administration.PowerShell
 Update-Module -Name Microsoft.PowerApps.PowerShell
 ```
 
+Today (11/4/2019) the only supported US Government environment is GCC Moderate, below is an example of adding a GCC Moderate PowerApps account.
+
 ```
 # Add an account in GCC Moderate
 Add-PowerAppsAccount -Endpoint "usgov" 
 ```
-
-NOTE: Today (11/4/2019), GCC High and GCC DoD for PowerApps is not supported
 
 ## Exchange Online
 
