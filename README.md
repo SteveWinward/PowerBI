@@ -3,6 +3,8 @@
 # Power BI Resources
 Power BI training resources, presentations and downloads
 
+[Power BI in Government](https://powergi.blog/)
+
 # Training Links
 [Power BI Guided Learning](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
 
