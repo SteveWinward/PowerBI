@@ -5,7 +5,7 @@ Power BI training resources, presentations and downloads
 
 [Power BI in Government](https://powergi.blog/)
 
-# Training Links
+# Power BI Training Links
 [Power BI Guided Learning](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
 
 [Guy in a Cube](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
@@ -15,6 +15,19 @@ Power BI training resources, presentations and downloads
 [Power BI Training Content](https://aka.ms/PBITraining)
 
 [Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
+
+# Excel Training Resources
+[Power Query](https://templates.office.com/en-us/power-query-tutorial-tm11414620)
+
+[Make Your First Pivot Table](https://templates.office.com/en-us/pivottable-tutorial-tm16400647)
+
+[Get More out of Pivot Tables](https://templates.office.com/en-us/get-more-out-of-pivottables-tm16410255)
+
+[Going Beyond Pie Charts](https://templates.office.com/en-us/beyond-pie-charts-tutorial-tm45299826)
+
+[Tips and Tricks](https://templates.office.com/en-us/tips-tricks-tm22725512)
+
+[50 Time-saving Excel Shortcuts](https://templates.office.com/en-us/50-time-saving-excel-shortcuts-tm67670278)
 
 # DC Area Power BI Training Events
 |Event Date|Event City|Event State|Registration URL|
