@@ -16,6 +16,18 @@ Power BI training resources, presentations and downloads
 
 [Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
 
+# DC Area Power BI Training Events
+|Event Date|Event City|Event State|Registration URL|
+|---|---|---|---|
+|12/13/2019|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|1/13/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|1/29/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|2/12/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|2/25/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|3/11/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|3/24/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+
+
 # Presentations
 [Power BI Developer Scenarios](https://aka.ms/steve-pbi-dev)
 
