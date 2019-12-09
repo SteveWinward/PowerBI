@@ -30,15 +30,15 @@ Power BI training resources, presentations and downloads
 [50 Time-saving Excel Shortcuts](https://templates.office.com/en-us/50-time-saving-excel-shortcuts-tm67670278)
 
 # DC Area Power BI Training Events
-|Event Date|Event City|Event State|Registration URL|
+|Event Date|Event Location|Registration URL|
 |---|---|---|---|
-|12/13/2019|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
-|1/13/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88481680001&ch=x4)|
-|1/29/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88529560001&ch=x4)|
-|2/12/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x87163080001&ch=x4)|
-|2/25/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88530890001&ch=x4)|
-|3/11/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88488140001&ch=x4)|
-|3/24/2020|Reston|Virginia|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88489470001&ch=x4)|
+|12/13/2019|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
+|1/13/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88481680001&ch=x4)|
+|1/29/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88529560001&ch=x4)|
+|2/12/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x87163080001&ch=x4)|
+|2/25/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88530890001&ch=x4)|
+|3/11/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88488140001&ch=x4)|
+|3/24/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88489470001&ch=x4)|
 
 
 # Presentations
