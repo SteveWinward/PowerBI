@@ -74,7 +74,9 @@ Here's the link to Microsoft's online docs for Power BI Shape Maps,
 Below are some custom TopoJSON files I have built,
 
 * [US District Attorneys Map](/ShapeMaps/US_DistrictAttorneys_CONUS.json)
+  * [Sample Power BI Report](https://github.com/SteveWinward/PowerBI/raw/master/ShapeMaps/US_DistrictAttorneys_Sample_Map.pbix)
 * [US Trustees Program Regions Map](/ShapeMaps/USTP_Regions_Map_CONUS.json)
+  * [Sample Power BI Report](https://github.com/SteveWinward/PowerBI/raw/master/ShapeMaps/USTP_Sample_Map.pbix)
 
 Mapshaper is a great website to convert existing shapefiles into TopoJSON format,
 
