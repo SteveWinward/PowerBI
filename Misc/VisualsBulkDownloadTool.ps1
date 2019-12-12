@@ -108,7 +108,9 @@ $headers = @{'Accept-Language' = 'en-US'}
 # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
 # NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's
 # https://stackoverflow.com/questions/38005341/the-response-content-cannot-be-parsed-because-the-internet-explorer-engine-is-no
-$json = Invoke-RetryCommand -ScriptBlock { Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS -Headers $headers | ConvertFrom-Json }.GetNewClosure() -Verbose
+$json = Invoke-RetryCommand -ScriptBlock { 
+        Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS -Headers $headers | ConvertFrom-Json 
+    }.GetNewClosure() -Verbose
 
 # loop over all results
 $json.Values | ForEach-Object {
