@@ -101,10 +101,14 @@ $url = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=A
 # Execute the REST call and parse the results into JSON
 Write-Host "Attempting to download the list of all Power BI visuals"
 
+# Construct the Headers for the web request
+# If you don't specify a language, no results will be returned
+$headers = @{'Accept-Language' = 'en-US'}
+
 # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
 # NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's
 # https://stackoverflow.com/questions/38005341/the-response-content-cannot-be-parsed-because-the-internet-explorer-engine-is-no
-$json = Invoke-RetryCommand -ScriptBlock { Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS | ConvertFrom-Json }.GetNewClosure() -Verbose
+$json = Invoke-RetryCommand -ScriptBlock { Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS -Headers $headers | ConvertFrom-Json }.GetNewClosure() -Verbose
 
 # loop over all results
 $json.Values | ForEach-Object {
