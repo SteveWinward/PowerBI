@@ -32,7 +32,6 @@ Power BI training resources, presentations and downloads
 # DC Area Power BI Training Events
 |Date|Location|Registration|
 |---|---|---|
-|12/13/2019|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x79217850001&ch=x4)|
 |1/13/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88481680001&ch=x4)|
 |1/29/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88529560001&ch=x4)|
 |2/12/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x87163080001&ch=x4)|
