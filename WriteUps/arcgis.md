@@ -14,20 +14,20 @@ First you need to get the URL of your ESRI ArcGIS Enterprise environment.  The U
 
 Open up Power BI Desktop (not Power BI Desktop for Report Server).  In the ribbon click on "Enter Data". Create a simple table like below,
 
-![Enter Sample Data](Images/arc-gis-enter-data.JPG)
+![Enter Sample Data](Images/arc-gis-enter-data.jpg)
 
 Next, add the ArcGIS visual to your report,
 
-![Add ArcGIS Visual](Images/arc-gis-add-visual.JPG)
+![Add ArcGIS Visual](Images/arc-gis-add-visual.jpg)
 
 Edit the visual to add your organizations ArcGIS Enterprise URL (the one that ends with portal).
 
-![Configure ArcGIS Enterprise URL](Images/arc-gis-set-url.JPG)
+![Configure ArcGIS Enterprise URL](Images/arc-gis-set-url.jpg)
 
 Click on the arrow next to the URL.  You will be prompted for your ArcGIS Enterprise credentials.
 
-![Bind Data to ArcGIS Visual](Images/arc-gis-set-data.JPG)
+![Bind Data to ArcGIS Visual](Images/arc-gis-set-data.jpg)
 
 You should now see the two sample data points rendering in the ArcGIS visual as below,
 
-![Web Connection Screenshot](Images/arc-gis-final-visual.JPG)
+![Web Connection Screenshot](Images/arc-gis-final-visual.jpg)
