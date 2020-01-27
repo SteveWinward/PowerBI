@@ -35,12 +35,12 @@ You should now see the two sample data points rendering in the ArcGIS visual as 
 ## Publishing the Report to Power BI Service
 Once you publish the report to the Power BI Service in O365, the report will look like this below,
 
-![Initial Report View](Images/arc-gis-power-bi-service.jpg)
+![Initial Report View](Images/arc-gis-power-bi-service.JPG)
 
 Click on the "Connect to ArcGIS Enterprise" to sign in.
 
-![Connect to ArcGIS Enterprise](Images/arc-gis-login.jpg)
+![Connect to ArcGIS Enterprise](Images/arc-gis-login.JPG)
 
 After you sign in successfully your report will look like this,
 
-![Final Report View](Images/arc-gis-final-report.jpg)
+![Final Report View](Images/arc-gis-final-report.JPG)
