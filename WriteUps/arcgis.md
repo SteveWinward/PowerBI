@@ -9,7 +9,7 @@ This write up describes how to integrate ESRI ArcGIS Enterpise with Power BI.
 ## Additional Documentation
 [Supported Environments ESRI Docs](https://doc.arcgis.com/en/maps-for-powerbi/get-started/supported-env.htm)
 
-## Creating the Demo
+## Creating the Demo with Power BI Desktop
 First you need to get the URL of your ESRI ArcGIS Enterprise environment.  The URL you need to use with Power BI will end with "/portal".  For example "https://arcgis.contoso.com/portal".
 
 Open up Power BI Desktop (not Power BI Desktop for Report Server).  In the ribbon click on "Enter Data". Create a simple table like below,
@@ -31,3 +31,16 @@ Click on the arrow next to the URL.  You will be prompted for your ArcGIS Enterp
 You should now see the two sample data points rendering in the ArcGIS visual as below,
 
 ![Web Connection Screenshot](Images/arc-gis-final-visual.jpg)
+
+## Publishing the Report to Power BI Service
+Once you publish the report to the Power BI Service in O365, the report will look like this below,
+
+![Initial Report View](Images/arc-gis-power-bi-service.jpg)
+
+Click on the "Connect to ArcGIS Enterprise" to sign in.
+
+![Connect to ArcGIS Enterprise](Images/arc-gis-login.jpg)
+
+After you sign in successfully your report will look like this,
+
+![Final Report View](Images/arc-gis-final-report.jpg)
