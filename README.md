@@ -101,6 +101,11 @@ Here's a write up on creating a world map with the shape map visual,
 
 [World Map Shape Map Example](/WriteUps/world-map.md)
 
+## ESRI ArcGIS Enterpise Integration
+Here's a write up on integrating an on premise ArcGIS Enterprise solution with Power BI in the cloud.
+
+[ArcGIS Enterprise Integration](/WriteUps/arcgis.md)
+
 ## PowerShell for US Government Environments
 Here are some samples on connecting to US Government environments with various PowerShell modules,
 
