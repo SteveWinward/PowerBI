@@ -75,9 +75,9 @@ Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Fo
 ````
 
 ## Filtering for Access Changes
-A common question customers want to answer is have any of my Power BI Workspaces' access changed recently?  This will only cover the new V2 Workspaces and Apps in Power BI.
+A common question customers want to answer is have any of my Power BI Workspaces access changed recently?  This will only cover the new V2 Workspaces and Apps in Power BI.
 
-For new V2 workspaces, you have the following Actiivty Types available,
+For new V2 workspaces, you have the following Activity Types available,
 
 |Activity Type|Activity Description|
 |---|---|
