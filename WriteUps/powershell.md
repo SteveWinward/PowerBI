@@ -30,7 +30,31 @@ Login-PowerBI -Environment USGovHigh
 Login-PowerBI -Environment USGovMil
 ```
 
-## PowerApps
+## Azure AD
+
+https://docs.microsoft.com/en-us/office365/enterprise/powershell/connect-to-office-365-powershell#step-2-connect-to-azure-ad-for-your-office-365-subscription
+
+If you have not already done so, install the Azure AD Module.  Note that you need to run this as an administrator.
+
+```
+Install-Module -Name AzureAD
+```
+
+If you have already installed it, make sure to update to the latest version
+
+```
+Update-Module -Name AzureAD
+```
+
+```
+# Login for GCC Moderate
+Connect-AzureAD
+
+# Login for GCC High / GCC DoD
+Login-PowerBI -Environment AzureUSGovernment
+```
+
+## Power Apps
 
 https://docs.microsoft.com/en-us/power-platform/admin/powerapps-powershell
 
