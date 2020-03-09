@@ -4,6 +4,10 @@ In order to view and analyze the Power BI audit logs in O365, you first need to 
 
 https://docs.microsoft.com/en-us/power-bi/service-admin-auditing#use-the-audit-log
 
+## Accessing Audit Logs
+You need to either be a O365 Global Admin or you need to be assigned the View-Only Audit Logs role in Exchange Online.  More details in the link below,
+
+https://docs.microsoft.com/en-us/power-bi/service-admin-auditing#audit-log-requirements
 
 ## Analyzing Audits via the Unified Audit Log UI
 The O365 Audit Logs URL is different based on the cloud environment you are using,
