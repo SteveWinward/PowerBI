@@ -20,7 +20,7 @@ If you go to the link above for your environment, you can manually search for Po
 
 If you want to setup an automated alert anytime one of your filters triggers, you can create a new alert policy in the UI,
 
-![Alert Policies](Images/power-bi-audit-logs-new-alert-policy.jpg)
+![Alert Policies](Images/power-bi-audit-logs-new-alert-policy.JPG)
 
 User information will show up with a ObjectUserID.  If you want to lookup the user information, go to the Azure portal,
 
@@ -34,7 +34,7 @@ Once in the Azure Portal, go to the Azure Active Directory blade.
 
 Then go to Users.  Then search for the ObjectUserID in the search box.  Make sure to change the Search Attributes drop down to "Object ID (exact match).
 
-![Azure Portal Screenshot](Images/power-bi-audit-logs-userobjectid-lookup-azure.jpg)
+![Azure Portal Screenshot](Images/power-bi-audit-logs-userobjectid-lookup-azure.JPG)
 
 ## PowerShell
 You can also search the audit logs via PowerShell.  You need one module installed to do this.
