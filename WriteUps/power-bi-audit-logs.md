@@ -48,6 +48,11 @@ You can also search the audit logs via PowerShell.  You need one module installe
 Install-Module -Name AzureAD
 ````
 
+If it was already installed, its always a good idea to update the Module
+````
+Update-Module -Name AzureAD
+````
+
 To connect to O365 you need to use the Exchange Online remote PowerShell module,
 ````
 # Set the user credentials
