@@ -102,11 +102,23 @@ There are also the same types of activity types for Apps (ie when you publish a 
 |CreateApp|Created Power BI app|
 |UpdateApp|Updated Power BI app|
 
+Another interesting activty type is GetGroupsAsAdmin.  This effectively tells you when an Admin is getting a list of all the workspaces regardless if they are a member to them.
+
+|Activity Type|Activity Description|
+|---|---|
+|GetGroupsAsAdmin|Lists all Workspaces for an Admin regardless of their actual Workspace membership|
+
 If you want to view recent Workspace access changes you can query via PowerShell with this sample example,
 
 ````
 # StartDate and EndDate are required.  Make sure to change this for your specific date range
 Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Operations "*Folder*" -Formatted
+````
+
+You can also specify a Workspace ID if you want to filter on a specific workspace.  To figure out what the Workspace ID is for a Workspace, go to the Workspace in a browser and copy the GUID in the URL (https://<power_bi_service>/groups/<Workspace ID>).
+
+````
+Search-UnifiedAuditLog -StartDate 3/7/2020 -EndDate 3/10/2020 -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
 ````
 
 This would yield sample results like below,
