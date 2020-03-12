@@ -77,7 +77,7 @@ Examples for GCC and GCC High below,
 Add-PowerAppsAccount -Endpoint "usgov" 
 
 # Add an account in GCC High
-Add-PowerAppsAccount -Endpoint usgovhigh
+Add-PowerAppsAccount -Endpoint "usgovhigh"
 ```
 
 ## Exchange Online
