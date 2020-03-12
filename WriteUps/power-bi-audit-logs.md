@@ -84,9 +84,19 @@ Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Fo
 ````
 
 ## Filtering for Access Changes
-A common question customers want to answer is have any of my Power BI Workspaces access changed recently?  This will only cover the new V2 Workspaces and Apps in Power BI.
+A common question customers want to answer is have any of my Power BI Workspaces access changed recently?  
 
-For new V2 workspaces, you have the following Activity Types available,
+### Classic Workspaces
+Classic workspaces are tied directly to an O365 group for access.  As a result, if you want to monitor access changes to a classic workspace, you need to monitor the activity events around an O365 group which can be found in the Azure AD audit events.
+
+[Azure AD Audit Event Types](https://docs.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide#azure-ad-group-administration-activities)
+
+### V2 Workspaces
+The newer workspaces do not require an O365 group to be created.  As a result, you can add users, distribution groups, security groups and O365 groups to roles in V2 workspaces.  
+
+[New Workspaces Docs](https://docs.microsoft.com/en-us/power-bi/service-new-workspaces)
+
+The following activities are available for auditing these workspaces,
 
 |Activity Type|Activity Description|
 |---|---|
