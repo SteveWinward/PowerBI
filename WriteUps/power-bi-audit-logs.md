@@ -91,6 +91,15 @@ Classic workspaces are tied directly to an O365 group for access.  As a result, 
 
 [Azure AD Audit Event Types](https://docs.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide#azure-ad-group-administration-activities)
 
+For example, if you wanted to analyze all of the events around users being added to a group called "Finance Team" over the last 5 days you could run the following PowerShell command,
+
+````
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 8 -Formatted -FreeText "Finance Team" -Operations "Add member to group"
+````
+
 ### V2 Workspaces
 The newer workspaces do not require an O365 group to be created.  As a result, you can add users, distribution groups, security groups and O365 groups to roles in V2 workspaces.  
 
