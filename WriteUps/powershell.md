@@ -141,8 +141,8 @@ Examples for GCC, GCC High and GCC DoD are below
 Connect-MicrosoftTeams
 
 # GCC High
-Connect-MicrosoftTeams -TeamsEnvironment TeamsGCCH
+Connect-MicrosoftTeams -TeamsEnvironmentName "TeamsGCCH"
 
 # GCC DoD
-Connect-MicrosoftTeams -TeamsEnvironment -TeamsDOD
+Connect-MicrosoftTeams -TeamsEnvironmentName "TeamsDOD"
 ```
