@@ -9,6 +9,10 @@ You need to either be a O365 Global Admin or you need to be assigned the View-On
 
 https://docs.microsoft.com/en-us/power-bi/service-admin-auditing#audit-log-requirements
 
+Each O365 service has different guarantees around how quickly events show up in the audit logs.  Power BI events in the service today (3/25/2020) will show up within 30 minutes of when the events occur.
+
+https://docs.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide
+
 ## Analyzing Audits via the Unified Audit Log UI
 The O365 Audit Logs URL is different based on the cloud environment you are using,
 
