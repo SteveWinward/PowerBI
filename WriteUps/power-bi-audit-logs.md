@@ -125,7 +125,7 @@ There are also the same types of activity types for Apps (ie when you publish a 
 |CreateApp|Created Power BI app|
 |UpdateApp|Updated Power BI app|
 
-Another interesting activty type is GetGroupsAsAdmin.  This effectively tells you when an Admin is getting a list of all the workspaces regardless if they are a member to them.
+Another interesting activty type is GetGroupsAsAdmin.  This will tell you when a Power BI Admin is using the Power BI PowerShell modules to list all of the workspaces in the tenant.
 
 |Activity Type|Activity Description|
 |---|---|
@@ -134,14 +134,21 @@ Another interesting activty type is GetGroupsAsAdmin.  This effectively tells yo
 If you want to view recent Workspace access changes you can query via PowerShell with this sample example,
 
 ````
-# StartDate and EndDate are required.  Make sure to change this for your specific date range
-Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Operations "*Folder*" -Formatted
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -Operations "Update*Access" -Formatted
 ````
+
+Note that today (3/27/2020) if a Power BI Admin adds themselves to a workspace via the Admin Portal in Power BI, the operation type will show up as "UpdateWorkspaceAccess", even if its a V2 workspace.  This is why the filter in the previous example uses "Update*Access" because it includes both UpdateWorkspaceAccess and UpdateFolderAccess.
 
 You can also specify a Workspace ID if you want to filter on a specific workspace.  To figure out what the Workspace ID is for a Workspace, go to the Workspace in a browser and copy the GUID in the URL (https://<power_bi_service>/groups/<Workspace ID>).
 
 ````
-Search-UnifiedAuditLog -StartDate 3/7/2020 -EndDate 3/10/2020 -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog --StartDate $StartDate -EndDate $EndDate -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
 ````
 
 This would yield sample results like below,
