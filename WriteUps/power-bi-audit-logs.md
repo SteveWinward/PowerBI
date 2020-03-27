@@ -140,7 +140,14 @@ $StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
 Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -Operations "Update*Access" -Formatted
 ````
 
-Note that today (3/27/2020) if a Power BI Admin adds themselves to a workspace via the Admin Portal in Power BI, the operation type will show up as "UpdateWorkspaceAccess", even if its a V2 workspace.  This is why the filter in the previous example uses "Update*Access" because it includes both UpdateWorkspaceAccess and UpdateFolderAccess.
+Note that today (3/27/2020) if a Power BI Admin adds themselves to a workspace via the Admin Portal in Power BI, the operation type will show up as "UpdateWorkspaceAccess", even if its a V2 workspace.  This is why the filter in the previous example uses "Update*Access" because it includes both UpdateWorkspaceAccess and UpdateFolderAccess.  In this example, you would also see an event for "GetGroupsAsAdmin" when they viewed the workspaces via the Admin Portal.  To view all of these events together you could use the following script,
+
+````
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -Operations "Update*Access", "*Admin*" -Formatted
+````
 
 You can also specify a Workspace ID if you want to filter on a specific workspace.  To figure out what the Workspace ID is for a Workspace, go to the Workspace in a browser and copy the GUID in the URL (https://<power_bi_service>/groups/<Workspace ID>).
 
@@ -148,7 +155,7 @@ You can also specify a Workspace ID if you want to filter on a specific workspac
 $EndDate = (Get-Date).ToString("MM/dd/yyyy")
 $StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
 
-Search-UnifiedAuditLog --StartDate $StartDate -EndDate $EndDate -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
 ````
 
 This would yield sample results like below,
