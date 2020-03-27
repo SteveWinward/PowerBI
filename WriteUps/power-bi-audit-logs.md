@@ -194,7 +194,7 @@ ObjectState  : Unchanged
 
 If you look at the FolderAccessRequests section you can see the UserObjectId associated with the access granted.  
 
-Now if you wanted to explored details around this user, you can use the AzureAD PowerShell module to view the users information,
+Now if you wanted to explore details around this user, you can use the AzureAD PowerShell module to view the users information,
 
 ````
 # First you need to connect to AzureAD
