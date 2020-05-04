@@ -29,12 +29,6 @@ Power BI training resources, presentations and downloads
 
 [50 Time-saving Excel Shortcuts](https://templates.office.com/en-us/50-time-saving-excel-shortcuts-tm67670278)
 
-# DC Area Power BI Training Events
-|Date|Location|Registration|
-|---|---|---|
-|3/11/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88488140001&ch=x4)|
-|3/24/2020|Reston, VA|[Register](https://www.microsoftevents.com/profile/form/index.cfm?PKformID=0x88489470001&ch=x4)|
-
 # Presentations
 [Power BI Developer Scenarios](https://aka.ms/steve-pbi-dev)
 

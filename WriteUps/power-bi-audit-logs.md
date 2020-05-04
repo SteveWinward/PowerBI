@@ -9,6 +9,10 @@ You need to either be a O365 Global Admin or you need to be assigned the View-On
 
 https://docs.microsoft.com/en-us/power-bi/service-admin-auditing#audit-log-requirements
 
+Each O365 service has different guarantees around how quickly events show up in the audit logs.  Power BI events in the service today (3/25/2020) will show up within 30 minutes of when the events occur.
+
+https://docs.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide
+
 ## Analyzing Audits via the Unified Audit Log UI
 The O365 Audit Logs URL is different based on the cloud environment you are using,
 
@@ -84,9 +88,28 @@ Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Fo
 ````
 
 ## Filtering for Access Changes
-A common question customers want to answer is have any of my Power BI Workspaces access changed recently?  This will only cover the new V2 Workspaces and Apps in Power BI.
+A common question customers want to answer is have any of my Power BI Workspaces access changed recently?  
 
-For new V2 workspaces, you have the following Activity Types available,
+### Classic Workspaces
+Classic workspaces are tied directly to an O365 group for access.  As a result, if you want to monitor access changes to a classic workspace, you need to monitor the activity events around an O365 group which can be found in the Azure AD audit events.
+
+[Azure AD Audit Event Types](https://docs.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide#azure-ad-group-administration-activities)
+
+For example, if you wanted to analyze all of the events around users being added to a group called "Finance Team" over the last 5 days you could run the following PowerShell command,
+
+````
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 8 -Formatted -FreeText "Finance Team" -Operations "Add member to group"
+````
+
+### V2 Workspaces
+The newer workspaces do not require an O365 group to be created.  As a result, you can add users, distribution groups, security groups and O365 groups to roles in V2 workspaces.  
+
+[New Workspaces Docs](https://docs.microsoft.com/en-us/power-bi/service-new-workspaces)
+
+The following activities are available for auditing these workspaces,
 
 |Activity Type|Activity Description|
 |---|---|
@@ -102,7 +125,7 @@ There are also the same types of activity types for Apps (ie when you publish a 
 |CreateApp|Created Power BI app|
 |UpdateApp|Updated Power BI app|
 
-Another interesting activty type is GetGroupsAsAdmin.  This effectively tells you when an Admin is getting a list of all the workspaces regardless if they are a member to them.
+Another interesting activty type is GetGroupsAsAdmin.  This will tell you when a Power BI Admin is using the Power BI PowerShell modules to list all of the workspaces in the tenant.
 
 |Activity Type|Activity Description|
 |---|---|
@@ -111,14 +134,28 @@ Another interesting activty type is GetGroupsAsAdmin.  This effectively tells yo
 If you want to view recent Workspace access changes you can query via PowerShell with this sample example,
 
 ````
-# StartDate and EndDate are required.  Make sure to change this for your specific date range
-Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Operations "*Folder*" -Formatted
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -Operations "Update*Access" -Formatted
+````
+
+Note that today (3/27/2020) if a Power BI Admin adds themselves to a workspace via the Admin Portal in Power BI, the operation type will show up as "UpdateWorkspaceAccess", even if its a V2 workspace.  This is why the filter in the previous example uses "Update*Access" because it includes both UpdateWorkspaceAccess and UpdateFolderAccess.  In this example, you would also see an event for "GetGroupsAsAdmin" when they viewed the workspaces via the Admin Portal.  To view all of these events together you could use the following script,
+
+````
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -Operations "Update*Access", "*Admin*" -Formatted
 ````
 
 You can also specify a Workspace ID if you want to filter on a specific workspace.  To figure out what the Workspace ID is for a Workspace, go to the Workspace in a browser and copy the GUID in the URL (https://<power_bi_service>/groups/<Workspace ID>).
 
 ````
-Search-UnifiedAuditLog -StartDate 3/7/2020 -EndDate 3/10/2020 -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -FreeText "0c6e1347-d325-4285-b944-84513db16887" -Formatted
 ````
 
 This would yield sample results like below,
@@ -164,7 +201,7 @@ ObjectState  : Unchanged
 
 If you look at the FolderAccessRequests section you can see the UserObjectId associated with the access granted.  
 
-Now if you wanted to explored details around this user, you can use the AzureAD PowerShell module to view the users information,
+Now if you wanted to explore details around this user, you can use the AzureAD PowerShell module to view the users information,
 
 ````
 # First you need to connect to AzureAD
