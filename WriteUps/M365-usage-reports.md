@@ -7,6 +7,11 @@ More details in the link below.
 
 https://docs.microsoft.com/en-us/power-bi/service-govus-signup#additional-signup-information
 
+## Enabling Microsoft 365 Usage Analytics
+You need to make sure the usage analytics are enabled for your tenant.  Details can be found below,
+
+https://docs.microsoft.com/en-us/microsoft-365/admin/usage-analytics/enable-usage-analytics?view=o365-worldwide
+
 ## Determine your O365 Tenant ID
 You will need to know your O365 tenant ID to get this report up and running.  Details around how you can get this are below.
 
