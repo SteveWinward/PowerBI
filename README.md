@@ -100,3 +100,8 @@ Here's a write up on integrating an on premise ArcGIS Enterprise solution with P
 Here are some samples on connecting to US Government environments with various PowerShell modules,
 
 [PowerShell for US Government](/WriteUps/powershell.md)
+
+## Manually Adding M365 Usage Reports in GCC
+How to manually create the M365 Usage Reports for GCC specific customers.
+
+[M365 Usage Reports](/WriteUps/M365-usage-reports.md)
