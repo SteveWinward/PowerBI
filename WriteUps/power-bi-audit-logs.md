@@ -84,7 +84,10 @@ Now you can use the Search-UnifiedAuditLog commandlet to your O365 environment a
 
 ````
 # Note: RecordType 20 is the filter for Power BI activities
-Search-UnifiedAuditLog -StartDate 3/1/2020 -EndDate 3/10/2020 -RecordType 20 -Formatted
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 -Formatted
 ````
 
 ## Filtering for Access Changes
@@ -221,4 +224,15 @@ Now you can view the details of the AzureAD properties for the user,
 ObjectId                             DisplayName   UserPrincipalName                       UserType
 --------                             -----------   -----------------                       --------
 14fa6fa9-dfd3-4b0f-ad79-29309e3f37b2 John Doe      john@contoso.onmicrosoft.com            Member
+````
+
+### Grouping Activity by Users
+An example of grouping Power BI activity by users is below using the PowerShell GroupBy function,
+
+````
+# Note: RecordType 20 is the filter for Power BI activities
+$EndDate = (Get-Date).ToString("MM/dd/yyyy")
+$StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
+
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 | Group-Object -Property UserIds
 ````
