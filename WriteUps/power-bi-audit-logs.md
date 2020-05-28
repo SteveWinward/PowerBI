@@ -234,5 +234,5 @@ An example of grouping Power BI activity by users is below using the PowerShell 
 $EndDate = (Get-Date).ToString("MM/dd/yyyy")
 $StartDate = (Get-Date).AddDays(-5).ToString("MM/dd/yyyy")
 
-Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 | Group-Object -Property UserIds
+Search-UnifiedAuditLog -StartDate $StartDate -EndDate $EndDate -RecordType 20 | Group-Object -Property UserIds, Operations| Export-Csv output.csv
 ````
