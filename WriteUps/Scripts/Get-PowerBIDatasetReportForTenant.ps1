@@ -1,5 +1,4 @@
-﻿
-Param
+﻿Param
 (
     [parameter(Mandatory=$true)]
     [ValidateSet('Public','USGov','USGovHigh','USGovMil')]
@@ -8,8 +7,6 @@ Param
 )
 
 $result = Login-PowerBI -Environment $EnvironmentName
-
-
 
 $allGroups = Get-PowerBIGroup -Include Datasets -Scope Organization
 
@@ -27,8 +24,6 @@ $allGroups | foreach{
                 ConfiguredBy     = $_.ConfiguredBy
                 WorkspaceName = $workspaceName
             }
-
-
             $hash.Add($uniqueId, $value)
         }
     }    
