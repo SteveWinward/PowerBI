@@ -16,3 +16,5 @@ You can run this script as below,
 # EnvironmentName options => Public, USGov, USGovHigh, USGovMil
 .\Get-PowerBIDatasetReportForTenant.ps1 -EnvironmentName USGovHigh
 ````
+
+You will get prompted to sign in with your O365 AAD credentials.  
