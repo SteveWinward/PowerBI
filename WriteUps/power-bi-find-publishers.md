@@ -6,6 +6,8 @@ A common question that comes up is "How many people have published reports in ou
 
 Below is a link to a sample script to loop over all workspaces in a Power BI tenant and then report on a list of all authors of datasets.
 
+[Sample Script](Scripts/Get-PowerBIDatasetReportForTenant.ps1)
+
 You can run this script as below,
 
 ````
