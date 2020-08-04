@@ -30,10 +30,17 @@ $allTeams = Get-Team
 foreach($team in $allTeams){
     $channels = Get-TeamChannel -GroupId $team.GroupId
 
+    $numberOfUsers = (Get-TeamUser -GroupId $team.GroupId).Count
+
+    $teamOwner = (Get-TeamUser -GroupId $Team | ?{$_.Role -eq 'Owner'}).User
+
     foreach($channel in $channels){
         $value = [PSCustomObject]@{
                 GroupId            = $team.GroupId
                 TeamName           = $team.DisplayName
+                TeamOwner          = $teamOwner
+                TeamUsersCount     = $numberOfUsers
+                CreationDate       = $creationDate
                 ChannelId          = $channel.Id
                 ChannelName        = $channel.DisplayName
                 ChannelDescription = $channel.Description
