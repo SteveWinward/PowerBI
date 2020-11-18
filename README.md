@@ -16,6 +16,10 @@ Power BI training resources, presentations and downloads
 
 [Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
 
+[Power BI Paginated Reports in a Day YouTube Training](https://www.youtube.com/playlist?list=PL1N57mwBHtN1icIhpjQOaRL8r9G-wytpT)
+
+[Power BI Adoption Framework](https://www.youtube.com/playlist?list=PL1N57mwBHtN0UZbEgLHtA1yxqPlae3B90)
+
 # Excel Training Resources
 [Power Query](https://templates.office.com/en-us/power-query-tutorial-tm11414620)
 
