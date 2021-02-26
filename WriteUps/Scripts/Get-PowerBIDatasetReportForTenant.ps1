@@ -15,6 +15,8 @@ $hash = @{}
 $allGroups | foreach{
     $workspaceId = $_.Id
     $workspaceName = $_.Name
+    $isOnDedicatedCapacity = $_.IsOnDedicatedCapacity
+    $capacityId = $_.CapacityId
     $_.Datasets | foreach {
         $uniqueId = "" + $workspaceId + "-" + $_.ConfiguredBy
 
@@ -23,6 +25,8 @@ $allGroups | foreach{
                 WorkspaceId = $workspaceId
                 ConfiguredBy     = $_.ConfiguredBy
                 WorkspaceName = $workspaceName
+		IsOnDedicatedCapacity = $isOnDedicatedCapacity
+		CapacityId = $capacityId
             }
             $hash.Add($uniqueId, $value)
         }
