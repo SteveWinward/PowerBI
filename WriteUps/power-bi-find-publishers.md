@@ -18,3 +18,10 @@ You can run this script as below,
 ````
 
 You will get prompted to sign in with your O365 AAD credentials.  
+
+You can also export the result set to a CSV with the following script
+
+````
+# EnvironmentName options => Public, USGov, USGovHigh, USGovMil
+.\Get-PowerBIDatasetReportForTenant.ps1 -EnvironmentName USGovHigh | Export-Csv -Path output.csv -NoTypeInformation
+````
