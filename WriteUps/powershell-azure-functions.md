@@ -18,8 +18,16 @@ Write-Host "PowerShell HTTP trigger function processed a request."
 $appId = $env:APP_ID
 $tenantId = $env:APP_TENANT_ID
 $clientCert = $env:CLIENT_CERT
+$secret = $env:APP_SECRET
 
+# Using client cert auth
 Connect-PowerBIServiceAccount -ServicePrincipal -Tenant $tenantId -CertificateThumbprint $clientCert -ApplicationId $appId
+
+# Using app secret auth
+$password = ConvertTo-SecureString $secret -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ($appId, $password)
+
+Connect-PowerBIServiceAccount -ServicePrincipal -Tenant $tenantId -Credential $credential
 
 $groups = Get-PowerBIGroup -Scope Organization
 
@@ -31,4 +39,13 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 
 # output to the blob file
 Push-OutputBinding -Name outputBlob -Value $groups -Clobber
+```
+Make sure to configure the following application settings in your Azure Function app,
+
+```
+    "CLIENT_CERT": "<ACTUAL_CERT_THUMBPRINT>",  // IF USING CLIENT CERT AUTH
+    "WEBSITE_LOAD_CERTIFICATES": "<ACTUAL_CERT_THUMBPRINT>", // TELLS AZURE FUNCTION TO LOAD THE CLIENT CERT
+    "APP_ID": "<AAD_APPLICATION_ID>",
+    "APP_TENANT_ID": "<AAD_TENANT_ID>",
+    "APP_SECRET": "<AAD_APPLICATION_SECRET>", // IF USING APP SECRET AUTHENTICATION
 ```
