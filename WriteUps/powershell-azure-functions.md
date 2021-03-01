@@ -4,6 +4,14 @@ I published a video on YouTube that outlines how you can use Service Principal a
 
 https://youtu.be/l_5bTH_Ipoo
 
+## Power BI PowerShell Module 
+```
+Install-Module -Name MicrosoftPowerBIMgmt
+```
+
+https://docs.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps
+
+## Sample Azure Function PowerShell Script
 The PowerShell Script I used for this demo is inline below,
 
 ```
@@ -40,6 +48,8 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 # output to the blob file
 Push-OutputBinding -Name outputBlob -Value $groups -Clobber
 ```
+
+## Azure Function App Settings used in Script
 Make sure to configure the following application settings in your Azure Function app,
 
 ```
