@@ -89,7 +89,9 @@ Details on the PAC tool can be found below (including install steps)
 
 https://docs.microsoft.com/en-us/powerapps/developer/data-platform/powerapps-cli
 
-Examples to use with GCC.  GCC High and DOD are not supported yet with PAC tool (as of 6/10/2021)
+Examples to use with GCC.  GCC High and DOD are not supported yet with PAC tool (as of 6/10/2021).  Open GitHub issue for this below,
+
+https://github.com/microsoft/powerplatform-actions/issues/73
 
 ```
 # GCC authentication with AAD application id and secret
