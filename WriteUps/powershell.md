@@ -83,6 +83,23 @@ Add-PowerAppsAccount -Endpoint "usgovhigh"
 Add-PowerAppsAccount -Endpoint "dod"
 ```
 
+## Power Apps Command Line Interface (PAC Tool)
+
+Details on the PAC tool can be found below (including install steps)
+
+https://docs.microsoft.com/en-us/powerapps/developer/data-platform/powerapps-cli
+
+Examples to use with GCC.  GCC High and DOD are not supported yet with PAC tool (as of 6/10/2021)
+
+```
+# GCC authentication with AAD application id and secret
+pac auth create --name gcc --kind CDS --url <INPUT_ENVIRONMENT_URL> --applicationId <AAD_APP_ID> --clientSecret <AAD_APP_SECRET> --tenant <AAD_TENANT_ID> --cloud UsGov
+
+# GCC authentication with AAD username and password
+pac auth create --name gcc --kind CDS --url <INPUT_ENVIRONMENT_URL> --username <USERNAME@CONTOSO.COM> --password <PASSWORD> --cloud UsGov
+
+```
+
 ## Exchange Online
 
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps
