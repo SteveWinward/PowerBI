@@ -78,6 +78,9 @@ Add-PowerAppsAccount -Endpoint "usgov"
 
 # Add an account in GCC High
 Add-PowerAppsAccount -Endpoint "usgovhigh"
+
+# Add an account in DOD
+Add-PowerAppsAccount -Endpoint "dod"
 ```
 
 ## Exchange Online
